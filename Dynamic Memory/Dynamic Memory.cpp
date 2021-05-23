@@ -27,6 +27,16 @@ int main()
 	std::cout << "\n1.See the address \t:[" << dest << "]" << std::endl;
 	std::cout << "2.See the address \t:[" << r << "]" << std::endl;
 
+	std::shared_ptr<std::vector<int>> name = std::make_shared<std::vector<int>>(1);
+	name->push_back(87);
+	std::cout << "try access element \t:[ " << name->size() << "]" << std::endl;
+	std::cout << "Traverse vector" << std::endl; 
+	for (auto i=name->begin();i!=name->end();++i)
+	{
+		std::cout << *i << "|";
+	}
+	std::cout<<std::endl;
+
 
 
 

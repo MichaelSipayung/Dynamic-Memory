@@ -7,7 +7,7 @@
 #include <memory>
 #include <list>	
 #include <vector>
-
+#include <cstdlib>
 std::shared_ptr<int> factory(int a) {
 	
 	return std::make_shared<int>();
@@ -33,5 +33,26 @@ private:
 	void check(size_type i, const std::string& msg) const;
 
 };
+
+void strBlob::check(size_type i, const std::string& msg) const {
+	if (i >= data->size()) {
+		throw std::out_of_range(msg);
+	}
+}
+std::string& strBlob::front() {
+	check(0, "Front on empty strBlob");
+	return data->back();
+}
+std::string& strBlob::back() {
+	check(0, "back on empty blob");
+	return data->back();
+}
+
+void strBlob::pop_back() {
+	check(0, "Pop back on empty strBlob");
+	data->pop_back();
+}
+
+
 
 // TODO: Reference additional headers your program requires here.
